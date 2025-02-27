@@ -15,8 +15,8 @@ map:
   - share:rw
   - ssl
 ports:
-  9000/tcp: [PORT:api_port]
-  9001/tcp: [PORT:console_port]
+  9000/tcp: 9000
+  9001/tcp: 9001
 ports_description:
   9000/tcp: "API port"
   9001/tcp: "Console port"
