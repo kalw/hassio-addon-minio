@@ -21,4 +21,4 @@ export MINIO_ROOT_PASSWORD="$(bashio::config 'password')"
 
 
 # Start MinIO
-exec minio server "${data_path}" 
+exec minio server "${data_path}" --console-address ":9001"
