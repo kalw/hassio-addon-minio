@@ -14,22 +14,24 @@ init: false
 map:
   - share:rw
   - ssl
+webui: "[PROTO:ssl]://[HOST]:[PORT:9001]"
 ports:
-  9000/tcp: 9000
   9001/tcp: 9001
+  9000/tcp: 9000
 ports_description:
-  9000/tcp: "API port"
   9001/tcp: "Console port"
+  9000/tcp: "API port"
 panel_icon: "mdi:database"
 panel_title: "MinIO"
-ingress: true
 options:
+  ssl: false
   ssl_certificate: null
   ssl_key: null
   data_path: "/share/minio"
   username: "admin"
   password: null
 schema:
+  ssl: "bool"
   ssl_certificate: "str?"
   ssl_key: "str?"
   data_path: "str"
