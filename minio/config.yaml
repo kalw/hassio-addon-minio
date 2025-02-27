@@ -1,3 +1,4 @@
+---
 name: "MinIO"
 version: "1.0.0"
 slug: "minio"
@@ -37,6 +38,6 @@ schema:
   ssl_key: "str?"
   data_path: "str"
   console_port: "port?"
-  api_port: "port?" 
+  api_port: "port?"
   username: "str"
   password: "str"
