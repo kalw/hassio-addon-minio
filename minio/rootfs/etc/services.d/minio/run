@@ -5,8 +5,7 @@
 
 # Get config values
 data_path=$(bashio::config 'data_path')
-api_port=$(bashio::config 'api_port')
-console_port=$(bashio::config 'console_port')
+
 
 # Optional SSL configuration
 if bashio::config.has_value 'ssl_certificate'; then
@@ -19,8 +18,7 @@ fi
 # Set environment variables
 export MINIO_ROOT_USER="$(bashio::config 'username')"
 export MINIO_ROOT_PASSWORD="$(bashio::config 'password')"
-export MINIO_ADDRESS=":${api_port}"
-export MINIO_CONSOLE_ADDRESS=":${console_port}"
+
 
 # Start MinIO
 exec minio server "${data_path}" 

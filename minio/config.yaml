@@ -1,6 +1,6 @@
 ---
 name: "MinIO"
-version: "1.0.0"
+version: "dev"
 slug: "minio"
 description: "MinIO high-performance object storage"
 url: "https://github.com/kalw/hassio-addons/tree/master/minio"
@@ -23,20 +23,15 @@ ports_description:
 panel_icon: "mdi:database"
 panel_title: "MinIO"
 ingress: true
-ingress_port: 0
 options:
   ssl_certificate: null
   ssl_key: null
   data_path: "/share/minio"
-  console_port: 9001
-  api_port: 9000
   username: "admin"
   password: null
 schema:
   ssl_certificate: "str?"
   ssl_key: "str?"
   data_path: "str"
-  console_port: "port?"
-  api_port: "port?"
   username: "str"
   password: "str"
