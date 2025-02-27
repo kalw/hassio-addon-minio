@@ -1,4 +1,6 @@
 ---
+extends: default
+
 rules:
   braces:
     level: error
@@ -64,3 +66,4 @@ rules:
     level: error
   truthy:
     level: error
+    check-keys: false
