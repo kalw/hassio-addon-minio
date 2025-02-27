@@ -15,16 +15,15 @@ map:
   - share:rw
   - ssl
 ports:
-  9000/tcp: 9000
-  9001/tcp: 9001
+  9000/tcp: [PORT:api_port]
+  9001/tcp: [PORT:console_port]
 ports_description:
   9000/tcp: "API port"
-  9001/tcp: "Web console port"
-webui: "http://[HOST]:[PORT:9001]"
+  9001/tcp: "Console port"
 panel_icon: "mdi:database"
 panel_title: "MinIO"
 ingress: true
-ingress_port: 9001
+ingress_port: 0
 options:
   ssl_certificate: null
   ssl_key: null
