@@ -24,16 +24,16 @@ ports_description:
 panel_icon: "mdi:database"
 panel_title: "MinIO"
 options:
-  ssl: false
-  ssl_certificate: null
-  ssl_key: null
+  ssl: true
+  certfile: null
+  keyfile: null
   data_path: "/share/minio"
   username: "admin"
   password: null
 schema:
   ssl: "bool"
-  ssl_certificate: "str?"
-  ssl_key: "str?"
+  certfile: "str?"
+  keyfile: "str?"
   data_path: "str"
   username: "str"
   password: "str"

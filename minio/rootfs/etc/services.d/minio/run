@@ -7,13 +7,14 @@
 data_path=$(bashio::config 'data_path')
 
 
-# Optional SSL configuration
-if bashio::config.has_value 'ssl_certificate'; then
-    ssl_cert=$(bashio::config 'ssl_certificate')
-    ssl_key=$(bashio::config 'ssl_key')
-    export MINIO_CERT_FILE="${ssl_cert}"
-    export MINIO_KEY_FILE="${ssl_key}"
-fi
+# SSL configuration
+bashio::config.require.ssl
+
+certfile=$(bashio::config 'certfile')
+export MINIO_CERT_FILE="${certfile}"
+keyfile=$(bashio::config 'keyfile')
+export MINIO_KEY_FILE="${keyfile}"
+
 
 # Set environment variables
 export MINIO_ROOT_USER="$(bashio::config 'username')"
