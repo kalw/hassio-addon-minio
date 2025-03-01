@@ -4,7 +4,7 @@ This repository will be used to store the add-ons for the Minio Home Assistant a
 
 Add-on documentation: <https://developers.home-assistant.io/docs/add-ons>
 
-[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fkalw%2Fhassio-addon-minio)
+[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fkalw%2Fhassio-addons)
 
 ## Add-ons
 
