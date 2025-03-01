@@ -1,4 +1,4 @@
-# Home Assistant Add-on: MinIO
+# [project-stage-shield] Home Assistant Add-on: MinIO
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -69,6 +69,7 @@ If you are more interested in stable releases of our add-ons:
 
 {% endif %}
 
+
 ## Features
 
 - S3 compatible object storage
@@ -82,18 +83,49 @@ If you are more interested in stable releases of our add-ons:
 [armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
-[commits-shield]: https://img.shields.io/github/commit-activity/y/kalw/hassio-addons.svg
-[commits]: https://github.com/kalw/hassio-addons/commits/main
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
-[docs]: https://github.com/kalw/hassio-addons/blob/main/minio/DOCS.md
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/
-[github-actions-shield]: https://github.com/kalw/hassio-addons/workflows/CI/badge.svg
-[github-actions]: https://github.com/kalw/hassio-addons/actions
-[license-shield]: https://img.shields.io/github/license/kalw/hassio-addons.svg
-[last-commit-shield]: https://img.shields.io/github/last-commit/kalw/hassio-addons.svg
+{% if channel == "stable" %}
+[github-actions-shield]: https://github.com/{{ name }}/workflows/CI/badge.svg
+[github-actions]: https://github.com/{{ name }}/actions
+[commits]: https://github.com/{{ name }}/commits/main
+[commits-shield]: https://img.shields.io/github/commit-activity/y/{{ name }}.svg
+[releases-shield]: https://img.shields.io/github/release/{{ name }}.svg
+[repository]: https://github.com/{{ name }}
+[releases]: https://github.com/{{ name }}/releases
+[docs]: ./DOCS.md
+[license-shield]: https://img.shields.io/github/license/{{ name }}.svg
+[last-commit-shield]: https://img.shields.io/github/last-commit/{{ name }}.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[releases-shield]: https://img.shields.io/github/release/kalw/hassio-addons.svg
-[releases]: https://github.com/kalw/hassio-addons/releases
-[repository]: https://github.com/kalw/hassio-addons 
+{% endif %}
+{% if channel == "edge" %}
+[github-actions-shield]: https://github.com/{{ name }}/workflows/CI/badge.svg
+[github-actions]: https://github.com/{{ name }}e/actions
+[commits]: https://github.com/{{ name }}/commits/main
+[commits-shield]: https://img.shields.io/github/commit-activity/y/{{ name }}.svg
+[releases-shield]: https://img.shields.io/github/release/{{ name }}.svg
+[repository]: https://github.com/{{ name }}
+[releases]: https://github.com/{{ name }}/releases
+[docs]: ./DOCS.md
+[license-shield]: https://img.shields.io/github/license/{{ name }}.svg
+[last-commit-shield]: https://img.shields.io/github/last-commit/{{ name }}.svg
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
+{% endif %}
+{% if channel == "beta" %}
+[github-actions-shield]: https://github.com/{{ name }}/workflows/CI/badge.svg
+[github-actions]: https://github.com/{{ name }}/actions
+[commits]: https://github.com/{{ name }}/commits/main
+[commits-shield]: https://img.shields.io/github/commit-activity/y/{{ name }}.svg
+[releases-shield]: https://img.shields.io/github/release/kalw/hassio-addons-beta.svg
+[repository]: https://github.com/{{ name }}
+[releases]: https://github.com/{{ name }}/releases
+[docs]: ./DOCS.md
+[license-shield]: https://img.shields.io/github/license/{{ name }}.svg
+[last-commit-shield]: https://img.shields.io/github/last-commit/{{ name }}.svg
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-development-yellowgreen.svg
+{% endif %}
+
+
+
