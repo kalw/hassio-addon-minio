@@ -19,6 +19,5 @@ jobs:
       repository: "hassio-addons"
       repository_edge: "hassio-addons-edge"
       repository_beta: "hassio-addons-beta"
-      environment: "edge"
     secrets:
       DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
