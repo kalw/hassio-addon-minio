@@ -37,3 +37,4 @@ schema:
   data_path: "str"
   username: "str"
   password: "str"
+image: ghcr.io/kalw/minio/{arch}
