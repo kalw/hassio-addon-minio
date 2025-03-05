@@ -7,14 +7,20 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install MinIO (pin the version)
 ARG MINIO_VERSION="RELEASE.2024-03-21T23-13-43Z"
+# hadolint ignore=SC1085
 RUN \
     apkArch="$(apk --print-arch)"; \
     case "$apkArch" in \
-    armhf) ARCH='arm' ;; \
-    aarch64) ARCH='arm64' ;; \
-    x86_64) ARCH='amd64' ;; \
-    x86) ARCH='386' ;; \
-    *) echo >&2 "error: unsupported architecture: $apkArch"; exit 1 ;; \
+    armhf) ARCH='arm' \
+    ;; \
+    aarch64) ARCH='arm64' \
+    ;; \
+    x86_64) ARCH='amd64' \
+    ;; \
+    x86) ARCH='386' \
+    ;; \
+    *) echo >&2 "error: unsupported architecture: $apkArch"; exit 1 \
+    ;; \
     curl -J -L -o /usr/bin/minio \
     "https://dl.min.io/server/minio/release/linux-${ARCH}/archive/minio.${MINIO_VERSION}" \
     && chmod +x /usr/bin/minio
