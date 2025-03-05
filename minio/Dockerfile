@@ -16,7 +16,7 @@ RUN \
     x86_64) ARCH='amd64' ;; \
     x86) ARCH='386' ;; \
     *) echo >&2 "error: unsupported architecture: $apkArch"; exit 1 ;; \
-    curl -J -L -o /usr/bin/minio \
+    curl -L -o /usr/bin/minio \
     "https://dl.min.io/server/minio/release/linux-${ARCH}/archive/minio.${MINIO_VERSION}" \
     && chmod +x /usr/bin/minio
 
