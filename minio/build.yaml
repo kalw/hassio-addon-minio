@@ -8,4 +8,4 @@ labels:
   org.opencontainers.image.source: "https://github.com/kalw/hassio-addons"
   org.opencontainers.image.licenses: "MIT"
 args:
-  MINIO_VERSION: "RELEASE.2025-02-18T16-25-55Z"
+  MINIO_VERSION: "RELEASE.2025-10-15T17-29-55Z"

@@ -6,7 +6,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install MinIO (pin the version)
-ARG MINIO_VERSION="RELEASE.2024-03-21T23-13-43Z"
+ARG MINIO_VERSION="RELEASE.2025-10-15T17-29-55Z"
 # hadolint ignore=SC1085
 RUN \
     apkArch="$(apk --print-arch)"; \
