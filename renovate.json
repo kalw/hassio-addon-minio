@@ -11,18 +11,14 @@
   "regexManagers": [
     {
       "fileMatch": ["^minio/Dockerfile$"],
-      "matchStrings": [
-        "ARG MINIO_VERSION=\"(?<currentValue>[^\"]+)\""
-      ],
+      "matchStrings": ["ARG MINIO_VERSION=\"(?<currentValue>[^\"]+)\""],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "minio/minio",
       "versioningTemplate": "loose"
     },
     {
       "fileMatch": ["^minio/build\\.yaml$"],
-      "matchStrings": [
-        "MINIO_VERSION: \"(?<currentValue>[^\"]+)\""
-      ],
+      "matchStrings": ["MINIO_VERSION: \"(?<currentValue>[^\"]+)\""],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "minio/minio",
       "versioningTemplate": "loose"
