@@ -3,9 +3,9 @@ build_from:
   aarch64: "ghcr.io/home-assistant/aarch64-base:3.19"
   amd64: "ghcr.io/home-assistant/amd64-base:3.19"
 labels:
-  org.opencontainers.image.title: "Home Assistant Add-on: MinIO"
-  org.opencontainers.image.description: "MinIO high-performance object storage"
+  org.opencontainers.image.title: "Home Assistant Add-on: SeaweedFS"
+  org.opencontainers.image.description: "SeaweedFS S3-compatible distributed object storage"
   org.opencontainers.image.source: "https://github.com/kalw/hassio-addons"
   org.opencontainers.image.licenses: "MIT"
 args:
-  MINIO_VERSION: "RELEASE.2025-10-15T17-29-55Z"
+  SEAWEEDFS_VERSION: "3.68"

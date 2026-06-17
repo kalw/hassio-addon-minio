@@ -5,22 +5,20 @@ FROM ${BUILD_FROM}
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# Install MinIO (pin the version)
-ARG MINIO_VERSION="RELEASE.2025-10-15T17-29-55Z"
-# hadolint ignore=SC1085
+# Install SeaweedFS
+ARG SEAWEEDFS_VERSION="3.68"
 RUN \
     apkArch="$(apk --print-arch)"; \
     case "$apkArch" in \
-    armhf) ARCH='arm' ;; \
-    armv7) ARCH='arm' ;; \
     aarch64) ARCH='arm64' ;; \
     x86_64) ARCH='amd64' ;; \
-    x86) ARCH='386' ;; \
     *) echo >&2 "error: unsupported architecture: $apkArch"; exit 1 ;; \
     esac && \
-    curl -JLo /usr/bin/minio \
-    "https://dl.min.io/server/minio/release/linux-${ARCH}/archive/minio.${MINIO_VERSION}" \
-    && chmod +x /usr/bin/minio
+    curl -fsSLo /tmp/seaweedfs.tar.gz \
+    "https://github.com/seaweedfs/seaweedfs/releases/download/${SEAWEEDFS_VERSION}/linux_${ARCH}.tar.gz" \
+    && tar -xzf /tmp/seaweedfs.tar.gz -C /usr/bin weed \
+    && rm /tmp/seaweedfs.tar.gz \
+    && chmod +x /usr/bin/weed
 
 # Copy root filesystem
 COPY rootfs /
@@ -39,7 +37,7 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Your Name <your@email.com>" \
+    maintainer="Kalw <kalw@indolore.net>" \
     org.opencontainers.image.title="${BUILD_NAME}" \
     org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
     org.opencontainers.image.vendor="Home Assistant Add-ons" \
@@ -50,4 +48,4 @@ LABEL \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
     org.opencontainers.image.revision=${BUILD_REF} \
-    org.opencontainers.image.version=${BUILD_VERSION} 
+    org.opencontainers.image.version=${BUILD_VERSION}
