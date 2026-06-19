@@ -1,0 +1,40 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Start the SeaweedFS service
+# ==============================================================================
+
+data_path=$(bashio::config 'data_path')
+s3_region=$(bashio::config 's3_region')
+access_key_id=$(bashio::config 'access_key_id')
+secret_key=$(bashio::config 'secret_key')
+
+mkdir -p "${data_path}"
+
+# Write S3 credentials config
+mkdir -p /etc/seaweedfs
+cat > /etc/seaweedfs/s3.json <<EOF
+{
+  "identities": [
+    {
+      "name": "admin",
+      "credentials": [
+        {
+          "accessKey": "${access_key_id}",
+          "secretKey": "${secret_key}"
+        }
+      ],
+      "actions": ["Admin", "Read", "Write", "List", "Tagging"]
+    }
+  ]
+}
+EOF
+
+exec weed server \
+    -dir="${data_path}" \
+    -filer \
+    -s3 \
+    -s3.config=/etc/seaweedfs/s3.json \
+    -s3.port=8333 \
+    -master.port=9333 \
+    -volume.port=8080 \
+    -filer.port=8888

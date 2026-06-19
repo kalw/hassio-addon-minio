@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
-      "matchPackageNames": ["minio/minio"],
+      "matchPackageNames": ["seaweedfs/seaweedfs"],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash"
@@ -10,18 +10,16 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["^minio/Dockerfile$"],
-      "matchStrings": ["ARG MINIO_VERSION=\"(?<currentValue>[^\"]+)\""],
+      "fileMatch": ["^seaweedfs/Dockerfile$"],
+      "matchStrings": ["ARG SEAWEEDFS_VERSION=\"(?<currentValue>[^\"]+)\""],
       "datasourceTemplate": "github-releases",
-      "depNameTemplate": "minio/minio",
-      "versioningTemplate": "regex:^RELEASE\\.(?<major>\\d{4})-(?<minor>\\d{2})-(?<patch>\\d{2})T(?<build>.+)Z$"
+      "depNameTemplate": "seaweedfs/seaweedfs"
     },
     {
-      "fileMatch": ["^minio/build\\.yaml$"],
-      "matchStrings": ["MINIO_VERSION: \"(?<currentValue>[^\"]+)\""],
+      "fileMatch": ["^seaweedfs/build\\.yaml$"],
+      "matchStrings": ["SEAWEEDFS_VERSION: \"(?<currentValue>[^\"]+)\""],
       "datasourceTemplate": "github-releases",
-      "depNameTemplate": "minio/minio",
-      "versioningTemplate": "regex:^RELEASE\\.(?<major>\\d{4})-(?<minor>\\d{2})-(?<patch>\\d{2})T(?<build>.+)Z$"
+      "depNameTemplate": "seaweedfs/seaweedfs"
     }
   ]
 }
