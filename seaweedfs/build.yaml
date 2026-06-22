@@ -8,4 +8,4 @@ labels:
   org.opencontainers.image.source: "https://github.com/kalw/hassio-addons"
   org.opencontainers.image.licenses: "MIT"
 args:
-  SEAWEEDFS_VERSION: "3.68"
+  SEAWEEDFS_VERSION: "3.99"
