@@ -6,7 +6,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install SeaweedFS
-ARG SEAWEEDFS_VERSION="3.99"
+ARG SEAWEEDFS_VERSION="4.34"
 RUN \
     apkArch="$(apk --print-arch)"; \
     case "$apkArch" in \
